@@ -1,7 +1,7 @@
 body {
   font: 100% Poppins, sans-serif;
   color: #333;
-  background-color: rgb(34, 92, 250);
+  background-color: rgb(0, 23, 85);
 }
 
 main {
@@ -17,7 +17,7 @@ main {
   align-items: center;
   border: 1px solid #000;
   width: 350px;
-  height: 350px;
+  height: 450px;
   background-color: white;
 }
 .container-login form {
@@ -39,11 +39,20 @@ main {
   font-size: 20px;
   font-weight: 500;
 }
+
+#icon-eye-password{
+  margin-left: 130px;
+  cursor: pointer;
+}
+
 .container-login hr {
   width: 140px;
+  margin-top: 50px;
 }
+
+
 .container-login #button-entrar {
-  margin-top: 10px;
+  margin-top: 80px;
   margin-left: 70px;
   width: 80px;
   font-weight: bold;
@@ -52,15 +61,16 @@ main {
 }
 .container-login #button-entrar:hover {
   cursor: pointer;
-  background-color: rgb(0, 68, 255);
+  background-color: rgb(0, 29, 110);
   color: #fff;
 }
+
 .container-login span > a {
   text-decoration: none;
   color: inherit;
   font-weight: 500;
 }
-.container-login span > #cadastre-se:hover {
+.container-login span > #deseja-fazer-login:hover {
   color: #0f00df;
   font-weight: bold;
-}/*# sourceMappingURL=login.css.map */
+}
