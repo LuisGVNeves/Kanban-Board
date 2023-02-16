@@ -15,16 +15,16 @@
       <div class="container-cadastro">
         <h1>Fazer Cadastro</h1>
 
-        <form action="#" id="form-cadastro">
+        <form action="#" id="form-cadastro" method="get">
           <label for="nome-input" id="label-login">Nome</label>
-          <input type="text" id="nome-input" name="nome-input" required>
+          <input type="text" id="nome-input"  required>
 
           <label for="usuario-input" id="label-login">Usuário</label>
-          <input type="text" id="usuario-input" name="usuario-input" required>
+          <input type="text" id="usuario-input"  required>
           
           <label for="password-input" id="label-password">Senha</label>
           <img src="../images/eye.svg" alt="ico-eye" id="icon-eye-password">
-          <input type="password" id="password-input" name="password-input" required>
+          <input type="password" id="password-input"  required>
 
 
           <button id="button-cadastrar">Cadastrar</button>
@@ -43,6 +43,8 @@
 
     </main>
 
+    <script src="../js/validacaoInput.js"></script>
     <script src="../js/Cadastro.js"></script>
+    <script src="../js/Login.js"></script>
   </body>
 </html>

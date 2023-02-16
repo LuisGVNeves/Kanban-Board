@@ -1,31 +1,88 @@
+// Validação do nome do usuario
+let nomeUsuario = document.querySelector("#nome-input");
+function validaNome(){
+  let nomeUsuarioLabel = document.querySelector("#label-login");
+
+  //Validação do input nome
+  nomeUsuario.addEventListener('keyup', () => {
+    if(nomeUsuario.value.length <= 2){
+      nomeUsuarioLabel.setAttribute('style', 'font-size: 12px');
+      nomeUsuarioLabel.innerHTML = "<strong>Insira no minimo 3 caracteres</strong>";
+    }
+    else{
+      nomeUsuarioLabel.setAttribute('style', 'color: green');
+      nomeUsuarioLabel.innerHTML = "Nome";
+    }
+  })
+}
+validaNome();
+
+// Validação do input senha
+let senhaUsuario = document.querySelector("#password-input");
+function validaSenha(){
+  let senhaUsuarioLabel = document.querySelector("#label-password");
+  
+  senhaUsuario.addEventListener('keypress', (e) => {
+    if(senhaUsuario.value.length <= 4){ 
+      senhaUsuarioLabel.setAttribute('style', 'font-size: 12px;');
+      senhaUsuarioLabel.innerHTML = "Minimo 5 caracteres";
+    }
+    else{
+      senhaUsuarioLabel.setAttribute('style', 'font-size: 20px;');
+      senhaUsuarioLabel.innerHTML = "Senha";
+    }
+  })
+}
+validaSenha();
 
 
-
-
-let btnCadastro = document.querySelector("#button-cadastrar");
-
-btnCadastro.addEventListener('click', () => {
+window.addEventListener('load', () => {
+  let btnCadastro = document.querySelector("#button-cadastrar");
   let form = document.querySelector("#form-cadastro");
-  let div = document.createElement('div');
 
-  div.classList.add("c-loader");
+  btnCadastro.addEventListener('click', () => {
 
-  const interval = setInterval(() => {
-    //Faz alguma coisa
-    form.appendChild(div);
-  },1000)
+    if(nomeUsuario.value.length <= 2 && senhaUsuario.value.length == 0 || nomeUsuario.value.length <= 2 && senhaUsuario.value.length <= 4){
+      window.location.href = "./Cadastro.html";
+    }
+    /*
+    if(senhaUsuario.value.length <= 4){
+      window.location.href = "./Cadastro.html";
+    }
+    */
 
-  setTimeout(function(){
-    clearTimeout(interval);
-    div.classList.remove("c-loader");
+    let div = document.createElement('div');
+    const interval = setInterval(() => {
+      
+      div.classList.add("c-loader");
+      
+      form.appendChild(div);
+    },1000);
+    
+    setTimeout(function(){
+      clearTimeout(interval);
+      div.classList.remove("c-loader");
+      
+      window.location.href = "../../Assets/html/Kanban.html";
+    }, 2000);
+    
+    e.target.removeEventListener();
+  });
+  
+  
 
-    window.location.href = "../../Assets/html/Kanban.html";
-  }, 2000)
-
-
+  
   
 
 
-
-
 })
+
+
+
+
+
+
+
+
+
+
