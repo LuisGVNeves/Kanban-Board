@@ -1,81 +1,110 @@
-// Validação do nome do usuario
-let nomeUsuario = document.querySelector("#nome-input");
-function validaNome(){
-  let nomeUsuarioLabel = document.querySelector("#label-login");
+let nickName = document.querySelector("#usuario-input");
 
-  //Validação do input nome
+let nomeUsuario = document.querySelector("#nome-input");
+let nomeUsuarioLabel = document.querySelector("#label-login");
+let boolNomeUsuario;
+
+let senhaUsuario = document.querySelector("#password-input");
+let senhaUsuarioLabel = document.querySelector("#label-password");
+let boolSenhaUsuario;
+
+
+let btnCadastro = document.querySelector("#button-cadastrar");
+
+
+// Lista para salvar o usuario no local storage, vou adicionar a listaUsuario em formato json no local storage, caso não tenha, vou criar uma lista vazia [] no local estorage
+let listaUsuario = JSON.parse(localStorage.getItem('listaUsuario') || '[]');
+
+
+
+function validaInputNome(){
   nomeUsuario.addEventListener('keyup', () => {
     if(nomeUsuario.value.length <= 2){
       nomeUsuarioLabel.setAttribute('style', 'font-size: 12px');
       nomeUsuarioLabel.innerHTML = "<strong>Insira no minimo 3 caracteres</strong>";
+      boolNomeUsuario = false;
     }
     else{
-      nomeUsuarioLabel.setAttribute('style', 'color: green');
+      nomeUsuarioLabel.setAttribute('style', 'font-size: 20px');
       nomeUsuarioLabel.innerHTML = "Nome";
+      boolNomeUsuario = true;
     }
   })
 }
-validaNome();
+validaInputNome();
 
-// Validação do input senha
-let senhaUsuario = document.querySelector("#password-input");
-function validaSenha(){
-  let senhaUsuarioLabel = document.querySelector("#label-password");
-  
-  senhaUsuario.addEventListener('keypress', (e) => {
-    if(senhaUsuario.value.length <= 4){ 
-      senhaUsuarioLabel.setAttribute('style', 'font-size: 12px;');
-      senhaUsuarioLabel.innerHTML = "Minimo 5 caracteres";
+function validaInputSenha(){
+
+  senhaUsuario.addEventListener('keyup', () => {
+    if(senhaUsuario.value.length <= 5){
+      senhaUsuarioLabel.setAttribute('style', 'font-size: 12px');
+      senhaUsuarioLabel.innerHTML = "<strong>Minimo 5 caracteres</strong>";
+      boolSenhaUsuarioUsuario = false;
     }
     else{
-      senhaUsuarioLabel.setAttribute('style', 'font-size: 20px;');
+      senhaUsuarioLabel.setAttribute('style', 'font-size: 20px');
       senhaUsuarioLabel.innerHTML = "Senha";
+      boolSenhaUsuario = true;
     }
   })
 }
-validaSenha();
+validaInputSenha();
 
+function mostrarSenha(){
+  // Assim que usuário clicar no olho que está no input da senha, eu mostro ela como input text e vice versa
+  const btnMostrarSenha = document.querySelector("#icon-eye-password");
+  btnMostrarSenha.addEventListener('click', () => {
+    const inputSenha = document.querySelector("#password-input");  
 
-window.addEventListener('load', () => {
-  let btnCadastro = document.querySelector("#button-cadastrar");
+    if(inputSenha.getAttribute('type') == 'password'){
+      inputSenha.setAttribute('type', 'text');
+    }
+    else{
+      inputSenha.setAttribute('type', 'password');
+    }
+  })
+
+}
+mostrarSenha();
+
+function cadastrar(){
   let form = document.querySelector("#form-cadastro");
 
-  btnCadastro.addEventListener('click', () => {
-
-    if(nomeUsuario.value.length <= 2 && senhaUsuario.value.length == 0 || nomeUsuario.value.length <= 2 && senhaUsuario.value.length <= 4){
-      window.location.href = "./Cadastro.html";
-    }
-    /*
-    if(senhaUsuario.value.length <= 4){
-      window.location.href = "./Cadastro.html";
-    }
-    */
-
+  if(boolNomeUsuario && boolSenhaUsuario){
+  
     let div = document.createElement('div');
+
     const interval = setInterval(() => {
-      
       div.classList.add("c-loader");
-      
       form.appendChild(div);
     },1000);
-    
+
     setTimeout(function(){
       clearTimeout(interval);
       div.classList.remove("c-loader");
-      
-      window.location.href = "../../Assets/html/Kanban.html";
+      window.location.href = "../../Assets/html/Login.html";
     }, 2000);
-    
-    e.target.removeEventListener();
-  });
-  
-  
+
+    // Guardar objeto usuario no array
+    listaUsuario.push(
+      {
+        nome: nomeUsuario.value, // nome no localStorage, recebe o nomeUsuario(input)
+        usuario: nickName.value,
+        senha: senhaUsuario.value
+      }
+    );
+    // Salvar no localStorage => Nome do campo | O que colocar em formato string
+    localStorage.setItem('listaUsuario', JSON.stringify(listaUsuario))
+  }      
+
+}
 
   
   
 
+  
 
-})
+
 
 
 

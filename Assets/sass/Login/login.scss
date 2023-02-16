@@ -23,9 +23,24 @@ main {
   height: 350px;
   background-color: white;
 
+
+  #msg-erro{
+    text-align: center;
+    color: #ff0000;
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+  }
+
+
   form {
     width: 220px;
     height: 180px;
+  }
+
+  #icon-eye-password{
+    padding-left: 130px;
   }
 
   form #usuario-input{

@@ -20,9 +20,20 @@ main {
   height: 350px;
   background-color: white;
 }
+.container-login #msg-erro {
+  text-align: center;
+  color: #ff0000;
+  background-color: #ffbbbb;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
 .container-login form {
   width: 220px;
   height: 180px;
+}
+.container-login #icon-eye-password {
+  padding-left: 130px;
 }
 .container-login form #usuario-input {
   margin-bottom: 10px;
