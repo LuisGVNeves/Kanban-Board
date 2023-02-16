@@ -16,6 +16,8 @@ let btnCadastro = document.querySelector("#button-cadastrar");
 let listaUsuario = JSON.parse(localStorage.getItem('listaUsuario') || '[]');
 
 
+let form = document.querySelector('#form-cadastro');
+
 
 function validaInputNome(){
   nomeUsuario.addEventListener('keyup', () => {
@@ -67,39 +69,48 @@ function mostrarSenha(){
 }
 mostrarSenha();
 
+btnCadastro.addEventListener('click', () => {
+  cadastrar();
+})
+
 function cadastrar(){
-  let form = document.querySelector("#form-cadastro");
-
-  if(boolNomeUsuario && boolSenhaUsuario){
   
-    let div = document.createElement('div');
-
+  if(boolNomeUsuario == true && boolSenhaUsuario == true){
+    let divLoading = document.querySelector(".divLoading");
+    
     const interval = setInterval(() => {
-      div.classList.add("c-loader");
-      form.appendChild(div);
+      divLoading.classList.add("c-loader");
+      divLoading.setAttribute('style', 'display: block');
+
+      form.appendChild(divLoading);
+
     },1000);
 
     setTimeout(function(){
       clearTimeout(interval);
-      div.classList.remove("c-loader");
+      divLoading.classList.remove("c-loader");
+
+      // Guardar objeto usuario no array
+      listaUsuario.push(
+        {
+          nome: nomeUsuario.value, // nome no localStorage, recebe o nomeUsuario(input)
+          usuario: nickName.value,
+          senha: senhaUsuario.value
+        }
+      );
+
+      // Salvar no localStorage => Nome do campo | O que colocar em formato string
+      localStorage.setItem('listaUsuario', JSON.stringify(listaUsuario));
+
       window.location.href = "../../Assets/html/Login.html";
     }, 2000);
 
-    // Guardar objeto usuario no array
-    listaUsuario.push(
-      {
-        nome: nomeUsuario.value, // nome no localStorage, recebe o nomeUsuario(input)
-        usuario: nickName.value,
-        senha: senhaUsuario.value
-      }
-    );
-    // Salvar no localStorage => Nome do campo | O que colocar em formato string
-    localStorage.setItem('listaUsuario', JSON.stringify(listaUsuario))
+
   }      
 
 }
 
-  
+
   
 
   

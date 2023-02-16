@@ -34,6 +34,7 @@ main {
 }
 .container-login #icon-eye-password {
   padding-left: 130px;
+  cursor: pointer;
 }
 .container-login form #usuario-input {
   margin-bottom: 10px;

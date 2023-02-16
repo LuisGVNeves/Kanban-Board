@@ -14,7 +14,7 @@
       <div class="container-cadastro">
         <h1>Fazer Cadastro</h1>
 
-        <form action="#" id="form-cadastro" method="get">
+        <form action="#" id="form-cadastro" method="get" onsubmit="cadastrar()">
           <label for="nome-input" id="label-login">Nome</label>
           <input type="text" id="nome-input"  required>
 
@@ -26,7 +26,9 @@
           <input type="password" id="password-input"  required>
 
 
-          <button id="button-cadastrar" onclick="cadastrar()">Cadastrar</button>
+          <button id="button-cadastrar">Cadastrar</button>
+
+          <div class="divLoading"></div>
         </form>
         
         
