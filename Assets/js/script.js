@@ -10,7 +10,6 @@ const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
 
 const logado = document.querySelector("#logado");
-
 logado.innerHTML = `Olá ${usuarioLogado.nome}`;
 
 
