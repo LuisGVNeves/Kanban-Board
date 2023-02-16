@@ -1,0 +1,63 @@
+body {
+  font: 100% Poppins, sans-serif;
+  color: #333;
+  background-color: rgb(34, 92, 250);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-login {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000;
+  width: 350px;
+  height: 350px;
+  background-color: white;
+}
+.container-login form {
+  width: 200px;
+  height: 150px;
+}
+.container-login form #usuario-input {
+  margin-bottom: 10px;
+}
+.container-login form #usuario-input,
+.container-login form #password-input {
+  width: 100%;
+  height: 25px;
+}
+.container-login form #label-login,
+.container-login form #label-password {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 20px;
+  font-weight: 500;
+}
+.container-login #button-entrar {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80px;
+  font-weight: bold;
+  border: 1px solid #000000;
+  padding: 5px 10px;
+}
+.container-login #button-entrar:hover {
+  cursor: pointer;
+  background-color: rgb(0, 68, 255);
+  color: #fff;
+}
+.container-login span > a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+.container-login span > #cadastre-se:hover {
+  color: #0f00df;
+  font-weight: bold;
+}/*# sourceMappingURL=login.css.map */
