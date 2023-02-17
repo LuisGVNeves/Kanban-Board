@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban</title>
     <link rel="stylesheet" href="../sass/Kanban/kanban.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -26,14 +26,14 @@
 
         <div id="form-container" class="hide">
           <form>
-            <label for="titulo" class="labels-text">Titulo da task</label>
-            <input type="text" id="titulo" name="titulo">
+            <label for="titulo" class="labels-text">Titulo da Tarefa</label>
+            <input type="text" id="tituloTask" name="titulo">
 
-            <label for="dataTask" class="labels-text">Data finalização da task</label>
+            <label for="dataTask" class="labels-text">Prazo</label>
             <input type="date" name="dataTask" id="dataTask">
 
             <label for="titulo" class="labels-text">Conteúdo</label>
-            <div id="conteudo" contenteditable="true"></div>
+            <div id="conteudoTask" contenteditable="true"></div>
 
             <button type="button" id="btnConcluido">Concluído</button>
           </form>
@@ -42,23 +42,26 @@
       </section>
 
       <!--kanban-->
-      <section>
+      <section class="section-kanban">
         <div class="kanban-container">
+
           <div class="column" id="task-nao-iniciada">
-            <h2>Task não iniciada</h2>
-            <div class="item">Card 01</div>
+            <h2>To-do não iniciado</h2>
+            <div class="item" draggable="true">Implementar Persistencia</div>
+            <div class="item" draggable="true">Implementar UD - CRUD</div>
           </div>
 
                   
           <div class="column" id="task-em-andamento">
-            <h2>Task em andamento</h2>
-            <div class="item">Card 03</div>
+            <h2>To-do em andamento</h2>
+            <div class="item" draggable="true">Gravar Kanban Notes</div>
           </div>
 
                   
           <div class="column" id="task-concluida">
-            <h2>Task Concluída</h2>
-            <div class="item">Card 05</div>
+            <h2>To-do Concluído</h2>
+            <div class="item" draggable="true">Card 1</div>
+            <div class="item" draggable="true">Card 2</div>
           </div>
 
         </div>
