@@ -1,3 +1,6 @@
+$font-stack: Poppins, sans-serif;
+$primary-color: #333;
+
 @mixin alinharAoCentro(){
   display: flex;
   flex-direction: column;
@@ -5,7 +8,7 @@
 }
 
 body {
-  font-family: 100% Poppins, sans-serif;
+  font-family: 100% font-stack, sans-serif;
   color: #333;
   background-color: rgb(0, 23, 85);
 }

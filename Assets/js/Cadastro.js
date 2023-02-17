@@ -9,16 +9,16 @@ let senhaUsuarioLabel = document.querySelector("#label-password");
 let boolSenhaUsuario;
 
 
-let btnCadastro = document.querySelector("#button-cadastrar");
-
 
 // Lista para salvar o usuario no local storage, vou adicionar a listaUsuario em formato json no local storage, caso não tenha, vou criar uma lista vazia [] no local estorage
 let listaUsuario = JSON.parse(localStorage.getItem('listaUsuario') || '[]');
 
 
+// Formulario de castro
 let form = document.querySelector('#form-cadastro');
 
 
+// Verifica se nome.length > 5
 function validaInputNome(){
   nomeUsuario.addEventListener('keyup', () => {
     if(nomeUsuario.value.length <= 2){
@@ -35,6 +35,8 @@ function validaInputNome(){
 }
 validaInputNome();
 
+
+// Verifica se senha.length > 5
 function validaInputSenha(){
   senhaUsuario.addEventListener('keyup', () => {
     if(senhaUsuario.value.length < 5){
@@ -51,6 +53,8 @@ function validaInputSenha(){
 }
 validaInputSenha();
 
+
+// Clicar no icone de olho, vai mostrar a senha
 function mostrarSenha(){
   // Assim que usuário clicar no olho que está no input da senha, eu mostro ela como input text e vice versa
   const btnMostrarSenha = document.querySelector("#icon-eye-password");
@@ -68,10 +72,12 @@ function mostrarSenha(){
 }
 mostrarSenha();
 
+
+// Ao clicar no botão de cadastrar, chama a função de cadastro
+let btnCadastro = document.querySelector("#button-cadastrar");
 btnCadastro.addEventListener('click', () => {
   cadastrar();
 })
-
 function cadastrar(){
   if(boolNomeUsuario == true && boolSenhaUsuario == true){
     let divLoading = document.querySelector(".spinner-border");
