@@ -74,6 +74,8 @@ btnCadastro.addEventListener('click', () => {
 })
 
 function cadastrar(){
+  //window.location.href = "../Assets/html/Cadastro.html?#";
+
   
   if(boolNomeUsuario == true && boolSenhaUsuario == true){
     let divLoading = document.querySelector(".divLoading");
@@ -103,7 +105,7 @@ function cadastrar(){
       localStorage.setItem('listaUsuario', JSON.stringify(listaUsuario));
       
       
-      window.location.href = "../../index.html";
+      window.location.href = "./Login.html";
       
     }, 2000);
   }      

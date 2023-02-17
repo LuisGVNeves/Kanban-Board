@@ -4,39 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="../sass/Cadastro/cadastro.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="../sass/Login/login.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
   </head>
   <body>
 
     <main>
-      <div class="container-cadastro">
-        <h1>Fazer Cadastro</h1>
+      <div class="container-login">
+        <h1>Fazer Login</h1>
+        
+        <div id="msg-erro" class="hide">Erro de autenticação</div>
 
-        <form id="form-cadastro">
-
-          <label for="nome-input" id="label-login">Nome</label>
-          <input type="text" id="nome-input"  required>
+        <form id="form-login">
 
           <label for="usuario-input" id="label-login">Usuário</label>
-          <input type="text" id="usuario-input"  required>
+          <input type="text" id="usuario-input" name="usuario-input" required>
           
           <label for="password-input" id="label-password">Senha</label>
           <img src="../images/eye.svg" alt="ico-eye" id="icon-eye-password">
-          <input type="password" id="password-input"  required>
+          <input type="password" id="password-input" name="password-input" required>
 
-          <button id="button-cadastrar" onclick="cadastrar()">Cadastrar</button>
 
-          <div class="divLoading"></div>
+          <button id="button-entrar" onclick="FazerLogin()">Entrar</button>
         </form>
         
         
         <hr>
 
-        <span>Deseja fazer Login? 
-          <span id="deseja-fazer-login">
-            <a href="./Login.html">Login</a>
+        <span>Não tem uma conta? 
+          <span id="cadastre-se">
+            <a href="./Cadastro.html?#">Cadastre-se</a>
           </span> 
         </span>
 
@@ -44,6 +43,6 @@
 
     </main>
 
-    <script src="../js/Cadastro.js"></script>
+    <script src="../js/Login.js"></script>
   </body>
 </html>

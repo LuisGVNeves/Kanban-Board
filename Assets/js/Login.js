@@ -48,8 +48,6 @@ function FazerLogin() {
     }
   });
 
-  let form = document.querySelector("#form-login");
-
   // Se usuario for correto, vou mandar pra rota Kanban
   if(inputUsuario.value == usuariosValidos.nome && senhaUsuario.value == usuariosValidos.senha){
     window.location.href = 'Assets/html/Kanban.html';
@@ -58,7 +56,7 @@ function FazerLogin() {
     msgError.classList.remove('hide');
     labelSenhaUsuario.setAttribute('style','color: red');
     inputUsuario.focus();
-    window.location.href = '\index.html';
+    window.location.href = './index.html';
   }
 }
 

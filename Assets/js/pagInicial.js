@@ -1,0 +1,1 @@
+window.location.href = './Assets/html/Login.html';
