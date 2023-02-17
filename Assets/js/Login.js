@@ -18,15 +18,18 @@ mostrarSenha();
 
 function FazerLogin() {
   let inputUsuario = document.querySelector("#usuario-input");
-  let labelUsuario = document.querySelector("#label-login");
-
+  
   let senhaUsuario = document.querySelector("#password-input");
   let labelSenhaUsuario = document.querySelector("#label-password");
-
+  
   // div msg erro
   let msgError = document.querySelector("#msg-erro");
-
+  
   let listaUsuario = [];
+
+
+
+
 
   // campos que vou pegar do local storage
   let usuariosValidos = {
@@ -41,7 +44,6 @@ function FazerLogin() {
   // Se o input com o nome do usuario, for igual aos nomes que tem dentro da lista que esta no local storage
   listaUsuario.forEach(element => {
     if(inputUsuario.value == element.nome && senhaUsuario.value == element.senha){
-
       usuariosValidos = {
         nome: element.nome,
         usuario: element.usuario,
@@ -50,30 +52,19 @@ function FazerLogin() {
     }
   });
 
-  for(let i =0; i < usuariosValidos.length; i++){
-    if(usuariosValidos.nome[i] != inputUsuario.value){
-      labelUsuario.setAttribute('style','color: red');
-      labelSenhaUsuario.setAttribute('style','color: red');
-      msgError.setAttribute('style', 'display: block');
-      msgError.innerHTML = "Erro de autenticação";
-      inputUsuario.focus();
-    }
-  }
-
+  let form = document.querySelector("#form-login");
 
   // Se usuario for correto, vou mandar pra rota Kanban
   if(inputUsuario.value == usuariosValidos.nome && senhaUsuario.value == usuariosValidos.senha){
-    setTimeout(function(){
-      window.location.href = "../../Assets/html/Kanban.html";
-    }, 1000);
-    
+    form.action = './Kanban.html';
   }
   else{
-    labelUsuario.setAttribute('style','color: red');
+    msgError.classList.remove('hide');
+    
     labelSenhaUsuario.setAttribute('style','color: red');
-    msgError.setAttribute('style', 'display: block');
-    msgError.innerHTML = "Erro de autenticação";
     inputUsuario.focus();
+    
+    form.action = './Login.html';
   }
 }
 

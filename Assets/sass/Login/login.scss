@@ -30,7 +30,8 @@ main {
     background-color: #ffbbbb;
     padding: 10px;
     border-radius: 4px;
-    display: none;
+    width: 200px;
+    height: 20px;
   }
 
 
@@ -89,4 +90,8 @@ main {
     color: #0f00df;
     font-weight: bold;
   }
+}
+
+.hide{
+  display: none;
 }
