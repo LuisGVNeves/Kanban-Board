@@ -52,14 +52,13 @@ function FazerLogin() {
 
   // Se usuario for correto, vou mandar pra rota Kanban
   if(inputUsuario.value == usuariosValidos.nome && senhaUsuario.value == usuariosValidos.senha){
-    form.action = 'Assets/html/Kanban.html';
+    window.location.href = 'Assets/html/Kanban.html';
   }
   else{
     msgError.classList.remove('hide');
     labelSenhaUsuario.setAttribute('style','color: red');
     inputUsuario.focus();
-    
-    form.action = 'https://luisgvneves.github.io/Kanban-Board/index.html';
+    window.location.href = '\index.html';
   }
 }
 
