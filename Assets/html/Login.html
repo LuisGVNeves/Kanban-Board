@@ -18,19 +18,23 @@
       <div class="container-login">
         <h1>Fazer Login</h1>
         
-        <div id="msg-erro" class="hide">Erro de autenticação</div>
+
+        <!--Icones cadeado e avatar-->
+        <img src="../images/person-fill.svg" alt="person-fill-svg" id="icone-avatar-login">
+        <img src="../images/unlock-fill.svg" alt="unlock-fill-svg" id="icone-senha-login">
 
         <form id="form-login">
 
-          <label for="usuario-input" id="label-login">Usuário</label>
-          <input type="text" id="usuario-input" name="usuario-input" required>
+          <label for="usuario-input" id="label-login"></label>
+          <input type="text" id="usuario-input" name="usuario-input" required placeholder="Usuario">
           
-          <label for="password-input" id="label-password">Senha</label>
+          <label for="password-input" id="label-password"></label>
+
           <img src="../images/eye.svg" alt="ico-eye" id="icon-eye-password">
-          <input type="password" id="password-input" name="password-input" required>
+          <input type="password" id="password-input" name="password-input" required placeholder="Senha">
 
 
-          <button id="button-entrar" type="button" >Entrar</button>
+          <button id="button-entrar" type="button">LOGIN</button>
         </form>
         
         
