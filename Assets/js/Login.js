@@ -16,9 +16,11 @@ function mostrarSenha(){
 mostrarSenha();
 
 
-function FazerLogin() {
-  let inputUsuario = document.querySelector("#usuario-input");
-  let senhaUsuario = document.querySelector("#password-input");
+function Login(){
+  let inputUsuario = document.querySelector("#usuario-input").value;
+  let labelLoginUsuario = document.querySelector("#label-login");
+
+  let inputSenhaUsuario = document.querySelector("#password-input").value;
   let labelSenhaUsuario = document.querySelector("#label-password");
   
   // div msg erro
@@ -26,20 +28,20 @@ function FazerLogin() {
   
   // Lista de usuarios
   let listaUsuario = [];
-
+  
   // campos que vou pegar do local storage
   let usuariosValidos = {
-    nome: '', 
-    usuario: '',
-    senha: ''
-  }
-
+    nome: null, 
+    usuario: null,
+    senha: null
+  };
+  
   // Pegando o campo listaUsuario
-  listaUsuario = JSON.parse(localStorage.getItem('listaUsuario'))
+  listaUsuario = JSON.parse(localStorage.getItem('listaUsuario'));
 
   // Se o input com o nome do usuario, for igual aos nomes que tem dentro da lista que esta no local storage
   listaUsuario.forEach(element => {
-    if(inputUsuario.value == element.nome && senhaUsuario.value == element.senha){
+    if(inputUsuario == element.nome && inputSenhaUsuario == element.senha){
       usuariosValidos = {
         nome: element.nome,
         usuario: element.usuario,
@@ -48,17 +50,16 @@ function FazerLogin() {
     }
   });
 
-  // Se usuario for correto, vou mandar pra rota Kanban
-  if(inputUsuario.value == usuariosValidos.nome && senhaUsuario.value == usuariosValidos.senha){
-    window.location.href = 'Assets/html/Kanban.html';
+  if(inputUsuario == usuariosValidos.nome && inputSenhaUsuario == usuariosValidos.senha){
+    window.location.href = './Kanban.html';
   }
   else{
+    window.location.href = '../../index.html';
+    labelLoginUsuario.setAttribute('style', 'color: red')
+    labelSenhaUsuario.setAttribute('style', 'color: red')
     msgError.classList.remove('hide');
-    labelSenhaUsuario.setAttribute('style','color: red');
-    inputUsuario.focus();
-    window.location.href = './index.html';
   }
-}
 
+}
 
 

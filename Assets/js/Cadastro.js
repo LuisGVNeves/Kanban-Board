@@ -74,9 +74,6 @@ btnCadastro.addEventListener('click', () => {
 })
 
 function cadastrar(){
-  //window.location.href = "../Assets/html/Cadastro.html?#";
-
-  
   if(boolNomeUsuario == true && boolSenhaUsuario == true){
     let divLoading = document.querySelector(".divLoading");
     
@@ -104,13 +101,10 @@ function cadastrar(){
       // Salvar no localStorage => Nome do campo | O que colocar em formato string
       localStorage.setItem('listaUsuario', JSON.stringify(listaUsuario));
       
-      
       window.location.href = "./Login.html";
       
     }, 2000);
   }      
-
-  //form.action = '../../index.html';
 }
 
 
