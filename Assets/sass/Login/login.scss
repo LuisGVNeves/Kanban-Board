@@ -1,6 +1,5 @@
 $font-stack: Poppins, sans-serif;
 $primary-color: #333;
-
 body {
   font: 100% $font-stack;
   color: $primary-color;
@@ -92,6 +91,7 @@ main {
   }
 }
 
+/*esconde a mensagem de erro do login*/
 .hide{
   display: none;
 }

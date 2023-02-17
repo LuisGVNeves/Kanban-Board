@@ -78,6 +78,7 @@ main {
   font-weight: bold;
 }
 
+/*esconde a mensagem de erro do login*/
 .hide {
   display: none;
 }/*# sourceMappingURL=login.css.map */

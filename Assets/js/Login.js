@@ -16,16 +16,9 @@ function mostrarSenha(){
 mostrarSenha();
 
 
+let inputUsuario = document.querySelector("#usuario-input").value;
+let inputSenhaUsuario = document.querySelector("#password-input").value;
 function Login(){
-  let inputUsuario = document.querySelector("#usuario-input").value;
-  let labelLoginUsuario = document.querySelector("#label-login");
-
-  let inputSenhaUsuario = document.querySelector("#password-input").value;
-  let labelSenhaUsuario = document.querySelector("#label-password");
-  
-  // div msg erro
-  let msgError = document.querySelector("#msg-erro");
-  
   // Lista de usuarios
   let listaUsuario = [];
   
@@ -54,12 +47,19 @@ function Login(){
     window.location.href = './Kanban.html';
   }
   else{
-    window.location.href = '../../index.html';
-    labelLoginUsuario.setAttribute('style', 'color: red')
-    labelSenhaUsuario.setAttribute('style', 'color: red')
-    msgError.classList.remove('hide');
+    showAlert();
   }
-
 }
 
+function showAlert(){
+  Swal.fire({
+    title: 'Usuário não encontrado',
+    showClass: {
+      popup: 'animate__animated animate__fadeInDown',
+    },
+    hideClass: {
+      popup: 'animate__animated animate__fadeOutUp',
+    }
+  })
+}
 
