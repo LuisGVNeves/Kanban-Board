@@ -103,7 +103,6 @@ function cadastrar(){
       localStorage.setItem('listaUsuario', JSON.stringify(listaUsuario));
       window.location.href = "../../index.html";
 
-      //window.location.href = "../../Assets/html/Login.html";
     }, 2000);
 
 

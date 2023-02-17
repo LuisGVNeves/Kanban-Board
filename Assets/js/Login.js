@@ -56,7 +56,7 @@ function FazerLogin() {
 
   // Se usuario for correto, vou mandar pra rota Kanban
   if(inputUsuario.value == usuariosValidos.nome && senhaUsuario.value == usuariosValidos.senha){
-    form.action = '../Assets/html/Kanban.html';
+    form.action = '../html/Kanban.html';
   }
   else{
     msgError.classList.remove('hide');
@@ -64,7 +64,7 @@ function FazerLogin() {
     labelSenhaUsuario.setAttribute('style','color: red');
     inputUsuario.focus();
     
-    form.action = './index.html';
+    form.action = '../../index.html';
   }
 }
 
