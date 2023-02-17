@@ -18,18 +18,14 @@ mostrarSenha();
 
 function FazerLogin() {
   let inputUsuario = document.querySelector("#usuario-input");
-  
   let senhaUsuario = document.querySelector("#password-input");
   let labelSenhaUsuario = document.querySelector("#label-password");
   
   // div msg erro
   let msgError = document.querySelector("#msg-erro");
   
+  // Lista de usuarios
   let listaUsuario = [];
-
-
-
-
 
   // campos que vou pegar do local storage
   let usuariosValidos = {
@@ -56,15 +52,14 @@ function FazerLogin() {
 
   // Se usuario for correto, vou mandar pra rota Kanban
   if(inputUsuario.value == usuariosValidos.nome && senhaUsuario.value == usuariosValidos.senha){
-    form.action = '../html/Kanban.html';
+    form.action = 'Assets/html/Kanban.html';
   }
   else{
     msgError.classList.remove('hide');
-    
     labelSenhaUsuario.setAttribute('style','color: red');
     inputUsuario.focus();
     
-    form.action = window.location.href = '../../index.html';
+    form.action = '\index.html';
   }
 }
 
