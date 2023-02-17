@@ -101,8 +101,9 @@ function cadastrar(){
 
       // Salvar no localStorage => Nome do campo | O que colocar em formato string
       localStorage.setItem('listaUsuario', JSON.stringify(listaUsuario));
+      window.location.href = "../../index.html";
 
-      window.location.href = "../../Assets/html/Login.html";
+      //window.location.href = "../../Assets/html/Login.html";
     }, 2000);
 
 
