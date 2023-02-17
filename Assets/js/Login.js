@@ -15,18 +15,36 @@ function mostrarSenha(){
 }
 mostrarSenha();
 
+// Inputs
+let inputUsuario = document.querySelector("#usuario-input");
+let inputSenhaUsuario = document.querySelector("#password-input");
 
-let inputUsuario = document.querySelector("#usuario-input").value;
-let inputSenhaUsuario = document.querySelector("#password-input").value;
+
+// Ao clicar no botão, vai checar se localStorage está vazio e direcionar pro login
+let btnEntrar = document.querySelector("#button-entrar");
+btnEntrar.addEventListener('click', () => {
+  // Caso o local storage esteja vazio, não é possivel entrar na pagina kanban
+  if(localStorage.getItem('listaUsuario') == null){
+    showAlert();
+  } 
+  else if(inputUsuario.value == "" && inputSenhaUsuario.value == ""){
+    showAlert();
+  }
+  else{
+    Login();
+  }
+})
+
+// Função que realiza o login do usuario no local storage
 function Login(){
   // Lista de usuarios
   let listaUsuario = [];
   
   // campos que vou pegar do local storage
   let usuariosValidos = {
-    nome: null, 
-    usuario: null,
-    senha: null
+    nome: "", 
+    usuario: "",
+    senha: ""
   };
   
   // Pegando o campo listaUsuario
@@ -34,7 +52,7 @@ function Login(){
 
   // Se o input com o nome do usuario, for igual aos nomes que tem dentro da lista que esta no local storage
   listaUsuario.forEach(element => {
-    if(inputUsuario == element.nome && inputSenhaUsuario == element.senha){
+    if(inputUsuario.value == element.nome && inputSenhaUsuario.value == element.senha){
       usuariosValidos = {
         nome: element.nome,
         usuario: element.usuario,
@@ -43,7 +61,8 @@ function Login(){
     }
   });
 
-  if(inputUsuario == usuariosValidos.nome && inputSenhaUsuario == usuariosValidos.senha){
+  // Se os inputs preenchidos estiverem corretos, usuario vai ser mandado pra rota kanban
+  if(inputUsuario.value == usuariosValidos.nome && inputSenhaUsuario.value == usuariosValidos.senha){
     window.location.href = './Kanban.html';
   }
   else{
@@ -51,6 +70,7 @@ function Login(){
   }
 }
 
+// Alert personalizado biblioteca sweetalert
 function showAlert(){
   Swal.fire({
     title: 'Usuário não encontrado',
@@ -58,8 +78,9 @@ function showAlert(){
       popup: 'animate__animated animate__fadeInDown',
     },
     hideClass: {
-      popup: 'animate__animated animate__fadeOutUp',
-    }
+      popup: 'animate__animated animate__fadeOutUp'
+    },
   })
+  
 }
 
