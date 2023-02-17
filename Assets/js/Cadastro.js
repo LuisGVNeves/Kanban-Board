@@ -36,16 +36,20 @@ function validaInputNome(){
 validaInputNome();
 
 function validaInputSenha(){
+  // Icone do olho
+  let eyeIcon = document.querySelector("#icon-eye-password");
 
   senhaUsuario.addEventListener('keyup', () => {
-    if(senhaUsuario.value.length <= 5){
+    if(senhaUsuario.value.length < 5){
       senhaUsuarioLabel.setAttribute('style', 'font-size: 12px');
       senhaUsuarioLabel.innerHTML = "<strong>Minimo 5 caracteres</strong>";
-      boolSenhaUsuarioUsuario = false;
+      eyeIcon.setAttribute('style', 'padding-left: 70px;')
+      boolSenhaUsuario = false;
     }
     else{
       senhaUsuarioLabel.setAttribute('style', 'font-size: 20px');
       senhaUsuarioLabel.innerHTML = "Senha";
+      eyeIcon.setAttribute('style', 'padding-left: 130px;')
       boolSenhaUsuario = true;
     }
   })
