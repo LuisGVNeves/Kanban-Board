@@ -59,7 +59,7 @@ function FazerLogin() {
     labelSenhaUsuario.setAttribute('style','color: red');
     inputUsuario.focus();
     
-    form.action = '\index.html';
+    form.action = 'https://luisgvneves.github.io/Kanban-Board/index.html';
   }
 }
 
