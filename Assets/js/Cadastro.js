@@ -27,8 +27,8 @@ function validaInputNome(){
       boolNomeUsuario = false;
     }
     else{
-      nomeUsuarioLabel.setAttribute('style', 'font-size: 20px');
-      nomeUsuarioLabel.innerHTML = "Nome";
+      nomeUsuarioLabel.setAttribute('style', 'font-size: 12px');
+      nomeUsuarioLabel.innerHTML = "";
       boolNomeUsuario = true;
     }
   })
@@ -36,20 +36,15 @@ function validaInputNome(){
 validaInputNome();
 
 function validaInputSenha(){
-  // Icone do olho
-  let eyeIcon = document.querySelector("#icon-eye-password");
-
   senhaUsuario.addEventListener('keyup', () => {
     if(senhaUsuario.value.length < 5){
-      senhaUsuarioLabel.setAttribute('style', 'font-size: 12px');
+      senhaUsuarioLabel.setAttribute('style', 'font-size: 11px');
       senhaUsuarioLabel.innerHTML = "<strong>Minimo 5 caracteres</strong>";
-      eyeIcon.setAttribute('style', 'padding-left: 70px;')
       boolSenhaUsuario = false;
     }
     else{
       senhaUsuarioLabel.setAttribute('style', 'font-size: 20px');
-      senhaUsuarioLabel.innerHTML = "Senha";
-      eyeIcon.setAttribute('style', 'padding-left: 130px;')
+      senhaUsuarioLabel.innerHTML = "";
       boolSenhaUsuario = true;
     }
   })
@@ -79,19 +74,15 @@ btnCadastro.addEventListener('click', () => {
 
 function cadastrar(){
   if(boolNomeUsuario == true && boolSenhaUsuario == true){
-    let divLoading = document.querySelector(".divLoading");
+    let divLoading = document.querySelector(".spinner-border");
     
     const interval = setInterval(() => {
-      divLoading.classList.add("c-loader");
       divLoading.setAttribute('style', 'display: block');
-
-      form.appendChild(divLoading);
-
     },1000);
 
     setTimeout(function(){
       clearTimeout(interval);
-      divLoading.classList.remove("c-loader");
+      divLoading.setAttribute('style', 'display: none');
 
       // Guardar objeto usuario no array
       listaUsuario.push(

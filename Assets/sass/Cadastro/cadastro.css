@@ -1,5 +1,5 @@
 body {
-  font: 100% Poppins, sans-serif;
+  font-family: 100% Poppins, sans-serif;
   color: #333;
   background-color: rgb(0, 23, 85);
 }
@@ -8,6 +8,10 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+header img {
+  margin-top: 20px;
   margin-right: 200px;
 }
 
@@ -25,49 +29,126 @@ main {
   width: 350px;
   height: 470px;
   background-color: white;
+  border-radius: 1%;
+}
+
+.container-cadastro h1 {
+  font-size: 30px;
+  margin-top: 30px;
 }
 
 .container-cadastro form {
-  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   height: 180px;
 }
 
-.container-cadastro form #usuario-input {
-  margin-bottom: 10px;
+#form-cadastro {
+  margin-top: 20px;
 }
 
+/*Inputs*/
 .container-cadastro form #usuario-input,
 .container-cadastro form #password-input,
 .container-cadastro form #nome-input {
-  width: 100%;
-  height: 25px;
+  width: 250px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  outline: 0;
+  border-bottom-color: rgba(0, 0, 0, 0.1725490196);
 }
 
-.container-cadastro form #label-login,
+/*placeholder Nome*/
+.container-cadastro form #nome-input::-moz-placeholder {
+  padding-left: 5px;
+  font-size: 15px;
+}
+.container-cadastro form #nome-input::placeholder {
+  padding-left: 5px;
+  font-size: 15px;
+}
+
+.container-cadastro form #label-login {
+  margin-top: 10px;
+}
+
+/*placeholder nickname*/
+.container-cadastro form #usuario-input::-moz-placeholder {
+  font-size: 15px;
+  padding-left: 5px;
+}
+.container-cadastro form #usuario-input::placeholder {
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.container-cadastro form #label-nickname {
+  margin-top: 15px;
+}
+
+/*placeholder senha*/
+.container-cadastro form #password-input::-moz-placeholder {
+  padding-left: 5px;
+  font-size: 15px;
+}
+.container-cadastro form #password-input::placeholder {
+  padding-left: 5px;
+  font-size: 15px;
+}
+
 .container-cadastro form #label-password {
-  margin-right: auto;
-  margin-left: auto;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-right: 150px;
+  margin-left: 30px;
+}
+
+#icone-avatar-login {
+  width: 25px;
+  margin-right: 280px;
+  margin-top: 115px;
+  position: absolute;
+}
+
+#icone-avatar-nickname {
+  width: 25px;
+  margin-right: 280px;
+  margin-top: 165px;
+  position: absolute;
+}
+
+#icone-senha-login {
+  width: 25px;
+  margin-right: 275px;
+  margin-top: 220px;
+  position: absolute;
 }
 
 #icon-eye-password {
-  padding-left: 130px;
   cursor: pointer;
+  width: 20px;
+  margin-top: 130px;
+  margin-left: 200px;
+  position: absolute;
 }
 
 .container-cadastro hr {
   width: 140px;
-  margin-top: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.3647058824);
 }
 
 .container-cadastro #button-cadastrar {
-  margin-top: 80px;
-  margin-left: 70px;
-  width: 80px;
+  margin-top: 90px;
+  width: 180px;
+  padding: 10px;
   font-weight: bold;
-  border: 1px solid #000000;
-  padding: 7px 10px;
+  text-align: center;
+  background-color: rgb(28, 89, 255);
+  border: none;
+  color: #fff;
 }
 
 .container-cadastro #button-cadastrar:hover {
@@ -88,28 +169,9 @@ main {
 }
 
 /*div pra carregar o loading*/
-.divLoading {
+.spinner-border {
   display: none;
-  width: 50px;
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-}
-
-@keyframes is-rotating {
-  to {
-    transform: rotate(1turn);
-  }
-}
-/*loading*/
-.c-loader {
-  animation: is-rotating 1s infinite;
-  border: 6px solid #e5e5e5;
-  border-top-color: #2ad44f;
-  border-radius: 50%;
-  margin-left: 90px;
-  margin-top: 20px;
-  width: 30px;
-  height: 30px;
+  margin-top: 80px;
+  width: 40px;
+  height: 40px;
 }/*# sourceMappingURL=cadastro.css.map */
