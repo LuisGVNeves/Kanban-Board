@@ -64,7 +64,7 @@ function FazerLogin() {
     labelSenhaUsuario.setAttribute('style','color: red');
     inputUsuario.focus();
     
-    form.action = 'https://luisgvneves.github.io/index.html?';
+    form.action = './index.html';
   }
 }
 
