@@ -43,9 +43,6 @@ $ acessar o site diretamente: https://luisgvneves.github.io/Kanban-Board/Assets/
 
 
 
-</br></br>
-<video src="https://user-images.githubusercontent.com/99727468/219701947-34d941d9-2592-4afb-864d-8f7563eeb878.mp4">
-
 
 <h3 align="center"> 
   Status do Projeto ✅ <br>
